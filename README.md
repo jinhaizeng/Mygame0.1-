@@ -1,7 +1,7 @@
 [速学堂](https://www.sxt.cn/Java_jQuery_in_action/thirteen-draw.html)
 Mygame0.1飞机小游戏
 
-## PlayGame0.1知识点
+## 1.PlayGame0.1知识点
 * Swing是一个为Java设计的GUI工具包。Swing是Java基础类的一部分。Swing包括了图形用户界面（GUI）组件如：文本框，文本域，按钮，分隔窗格和表。
  Swing提供许多比AWT更好的屏幕显示元素。它们用纯Java写成，所以同Java本身一样可以跨平台运行，这一点不像AWT。它们是JFC的一部分。它们支持可更换的面板和主题（各种操作系统默认的特有主题），然而不是真的使用原生平台提供的设备，而是仅仅在表面上模仿它们。这意味着你可以在任意平台上使用Java支持的任意面板。轻量级组件的缺点则是执行速度较慢，优点就是可以在所有平台上采用统一的行为。
 * 继承`JFrame`这个，其实就是Swing
@@ -16,7 +16,8 @@ Mygame0.1飞机小游戏
 		});
     ```
 
-## # PlayGame0.2知识点
+##  2.PlayGame0.2知识点
+**这个项目主要是用来学习图形图像**
 * paint函数重写
 * [paint函数调用黑屏解决办法](https://zhidao.baidu.com/question/1964290833153505660.html)
 * 改版画笔属性时（如颜色、字体），要先保存原来的画笔信息，函数调用完成后再恢复信息
@@ -39,3 +40,38 @@ Mygame0.1飞机小游戏
 			
 	}
 	```
+* 加载图片的代码直接抄的，后面肯定还是要理解的。要花时间去啃
+```java
+package game;
+
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+import javax.imageio.ImageIO;
+
+public class GameUtil {
+	// 工具类最好将构造器私有化。
+	private GameUtil() {
+
+	}
+	/**
+	 * 返回指定路径文件的图片对象
+	 * @param path
+	 * @return
+	 */
+	public static Image getImage(String path) {
+		BufferedImage bi = null;
+		try {
+			URL u = GameUtil.class.getClassLoader().getResource(path);
+			bi = ImageIO.read(u);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return bi;
+	}
+}
+```
+## 3.PlayGmae0.3知识点
+* paint()是系统调用的，用户不可以调用，而repaint()可以调	
+* 在类MyGameFrame里面直接定义另一个类PaintThread，这样使用时就不需要实例化，可以直接调用类及其方法
