@@ -12,19 +12,27 @@ import java.awt.event.WindowEvent;
  *
  */
 public class MyGameFrame extends JFrame{
-
+	
+	Image ball = GameUtil.getImage("image/ball.png");
+	
 	@Override							//帮助画图
 	public void paint(Graphics g) {		//自动被调用，g相当于一直画笔
 		Color c = g.getColor();			//保存原来的画笔颜色
+		Font f = g.getFont();
 		
 		g.setColor(Color.BLUE);
+		g.setFont(new  Font("宋体",Font.BOLD,50));		//设置字体
 		
 		super.paint(g);					//添加上这行代码，表示再原有的基础上重绘，不然会黑屏
 		g.drawLine(100, 100, 300, 300);
 		g.drawRect(100, 100, 300, 300);
 		g.drawOval(100, 100, 300, 300);
 		g.drawString("我是谁？",200,200);
+		
+		
+		g.drawImage(ball, 250, 250, null);
 		g.setColor(c);					//恢复原来的画笔颜色
+		g.setFont(f);
 			
 	}
 	
