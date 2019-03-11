@@ -16,4 +16,12 @@
 		<list key="textArray">
 		</list>
 	</section>
+	<section name="PreferencesImportWizard">
+		<item value="D:\Sofeware\Code Tools\eclipse 2018-12\color theme\theme-3.epf" key=""/>
+		<item value="D:\Sofeware\Code Tools\eclipse 2018-12\color theme\theme-21.epf" key=""/>
+		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="D:\Sofeware\Code Tools\eclipse 2018-12\color theme\theme-21.epf"/>
+			<item value="D:\Sofeware\Code Tools\eclipse 2018-12\color theme\theme-3.epf"/>
+		</list>
+	</section>
 </section>

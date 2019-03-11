@@ -1,0 +1,6 @@
+package game;
+
+public class Constant {
+	public static  int GAME_WIDH = 500;
+	public static  int GAME_HEIGHT = 500;
+}
