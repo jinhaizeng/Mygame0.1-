@@ -91,6 +91,7 @@ public Rectangle getRect() {
 * 为了识别按下的按键是哪个，系统对键盘所有的按键做了编号，每个按键都对应相应的数字。
 
 ## 6.PlayGame0.7知识点——炮弹的边界返回问题
+![边界反弹的原理](https://github.com/jinhaizeng/Mygame0.1-/blob/master/%E5%9B%BE%E5%BA%8A/%E7%A2%B0%E6%92%9E%E8%A7%92%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97.jpg?raw=true)
 * 调用`repaint()`是间接调用的`paint()`
 * 产量可以定义在一个类`Constant`里面，这样修改某些参数时，直接修改这个类里面的常量就可以了
 * 做碰撞反弹的时候要注意，边界判断要减去小球的高度和宽度，否则小球会有一段时间藏在边界里面
@@ -160,7 +161,6 @@ public class Explode {
 	static {
 		for(int i = 0; i < 16; i++) {
 			imgs[i] = GameUtil.getImage("image/explode/e"+(i+1)+".gif");
-			imgs[i].getWidth(null);
 		}
 	}
 	
